@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+const fs = require("fs");
 
 //inquirer variable
 const inquirer = require("inquirer");
@@ -12,59 +13,60 @@ const questions = [
     {
         type: 'input',
         name: 'title',
-        message: 'What is the Title?',
+        message: 'What is the title of this project?'
     },
     {
         type: 'input',
         name: 'description',
-        message: 'What is the Description of the repository?',
+        message: 'Describe this project:'
     },
     {
         type: 'input',
         name: 'table of contents',
-        message: 'Any Table of Contents for this repository?',
+        message: 'What is contents of this project?'
     },
     {
         type: 'input',
         name: 'usage', 
-        message: 'What is the Usage?',
+        message: 'How can users download this?'
     },
     {
         type: 'input',
         name: 'contributing',
-        message: 'What is it Contributing?',
+        message: 'Where is it contributing?'
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'What Tests?',
+        message: 'Will there be a test included?'
     },
     {
         type: 'input',
         name: 'questions',
-        message: 'Any Questions?',
+        message: 'Any trouleshooting issues?'
     },
     {
         type: 'input',
         name: 'license',
+        message: 'What type of license does this project have?',
         choices: ["MIT", "GPLv3","GPL"],
-    }
+    },
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log("Creating READMe....");
-    // TODO add fs code here to save file
-    fs.writeFile(fileName,data);
+    fs.writeFileSync(fileName, data);
     console.log ("READMe is Ready to Preview.");
-};
+}
   
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.createPromptModule(questions).then(function(answers){
-        const markdownText = generateMarkdown(answer);
-        writeToFile('ReadMe.md', markdownText);
+    inquirer.prompt(questions)
+    .then(answer => {
+        const markdownText = generateMarkdown(answers);
+        writeToFile("ReadMe.md", markdownText);
     });
 }
 
