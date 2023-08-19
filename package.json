@@ -4,6 +4,7 @@
   "description": "\"Generator to put together a ReadMe file through the command line",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "\"echo \\\"Error: no test specificed\\\" && exit 1\""
   },
   "repository": {
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/kuocats/readME-generator/issues"
   },
-  "homepage": "https://github.com/kuocats/readME-generator#readme"
+  "homepage": "https://github.com/kuocats/readME-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.6"
+  }
 }
