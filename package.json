@@ -1,0 +1,22 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "\"Generator to put together a ReadMe file through the command line",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specificed\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuocats/readME-generator.git"
+  },
+  "keywords": [
+    "README"
+  ],
+  "author": "Vivian Kuo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kuocats/readME-generator/issues"
+  },
+  "homepage": "https://github.com/kuocats/readME-generator#readme"
+}
